@@ -1,0 +1,1 @@
+/usr/bin/c++ -DCMAKE_OSX_ARCHITECTURES=arm64 -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/main.dir/src/main.cpp.o -o main  -Wl,-rpath,/Users/zeviberlin/learning_cpp/learn_opengl/linking/lib -framework OpenGL /Users/zeviberlin/learning_cpp/learn_opengl/linking/lib/libglfw.3.dylib
