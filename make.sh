@@ -81,7 +81,7 @@ printf "${GREEN}\n[ Successfully created build files ]\n${NC}"
 printf "${YELLOW}[ Starting program compilation and linking ]\n${NC}"
 cmake --build .
 printf "${GREEN}[ Successfully created arm64 executable ]\n${NC}"
-mv ./main ..
+mv ./m4 ..
 
 
 popd > /dev/null
