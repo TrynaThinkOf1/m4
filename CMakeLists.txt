@@ -13,6 +13,7 @@ include_directories( "${PROJECT_SOURCE_DIR}/linking/include" )
 
 add_executable( main
 	src/main.cpp
+	src/glad.c
 )
 
 target_link_libraries( main PRIVATE

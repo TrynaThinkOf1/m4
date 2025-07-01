@@ -3,7 +3,53 @@
 #include <GLFW/glfw3.h>
 using namespace std;
 
+#define term glfwTerminate()
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+
 int main() {
+	glfwInit(); // start GLFW window manager (I think?)
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); // OpenGL version 3.3
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3); //    ^             ^
+	
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // idk
+
+	#ifdef __APPLE__ // MILM (Man I Love MacOS)
+		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+	#endif
+
+	GLFWwindow* window = glfwCreateWindow(800, 600, "OpenGL!!!", NULL, NULL); // the NULL, NULL are for monitors, which we laptop people don't have to deal with
+	if (window == NULL) { // window not created -> CREATES NULL NOT nullptr OBJECT!!!
+		cerr << "Could not create window!" << endl;
+		term;
+		return -1;
+	}
+	glfwMakeContextCurrent(window);
+
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) { // the glad manager couldn't pickup the window
+		cerr << "Could not initialize glad!" << endl;
+		term;
+		return -1;
+	}
+
+	glViewport(0, 0, 800, 600); // posX, posY, width, height
+
+	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
+	while (!glfwWindowShouldClose(window)) {
+		// GPU saves 2 states: current frame & next frame (just like React), it's necessary to manually swap them when working at such low levels
+		glfwSwapBuffers(window); // ^ that is what this does
+		glfwPollEvents(); // this looks for interrupts and such
+	}
+
+	term;
 	
 	return 0;
+}
+
+/*
+	This method is beneficial because we need to be able to smoothly handle resizing the window
+*/
+void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
+	glViewport(0, 0, width, height);
 }
