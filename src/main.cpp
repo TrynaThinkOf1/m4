@@ -40,6 +40,10 @@ int main() {
 	while (!glfwWindowShouldClose(window)) {
 		// check for interrupts
 		process_input(window);
+
+		// render
+		glClearColor(0.2f, 0.3f, 0.3f, 1.0f); // clear entire window and set color to this (RGBA format)
+		glClear(GL_COLOR_BUFFER_BIT); //          ^
 	
 		// GPU saves 2 states: current frame & next frame (just like React), it's necessary to manually swap them when working at such low levels
 		glfwSwapBuffers(window); // ^ that is what this does
