@@ -6,6 +6,7 @@ using namespace std;
 #define term glfwTerminate()
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+void process_input(GLFWwindow* window);
 
 int main() {
 	glfwInit(); // start GLFW window manager (I think?)
@@ -37,6 +38,9 @@ int main() {
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 	while (!glfwWindowShouldClose(window)) {
+		// check for interrupts
+		process_input(window);
+	
 		// GPU saves 2 states: current frame & next frame (just like React), it's necessary to manually swap them when working at such low levels
 		glfwSwapBuffers(window); // ^ that is what this does
 		glfwPollEvents(); // this looks for interrupts and such
@@ -52,4 +56,13 @@ int main() {
 */
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 	glViewport(0, 0, width, height);
+}
+
+/*
+	In order to process interrupts like keys or mouse movement, we must define an input processor method
+*/
+void process_input(GLFWwindow* window) {
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) { // has the ESC key been pressed?
+		glfwSetWindowShouldClose(window, true);
+	}
 }
