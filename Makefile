@@ -11,8 +11,8 @@ FLAGS=-Wall -Wextra -g $(INCDIRS) $(LIBDIRS) $(STD) $(OPT)
 
 
 SRC_DIR=./src
-CPP_FILES=$(SRC_DIR)/main.cpp $(SRC_DIR)/utils.cpp
-OBJECTS=main.o utils.o
+CPP_FILES=$(SRC_DIR)/main.cpp $(SRC_DIR)/files.cpp $(SRC_DIR)/utils.cpp
+OBJECTS=main.o files.o utils.o
 
 BINARY_DIR=./binaries/arm64
 BINARY=m4
