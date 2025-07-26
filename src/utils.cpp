@@ -38,7 +38,7 @@ void ltrim(string& str) {
     */
 void rtrim(string& str) {
 	size_t last = str.find_last_not_of(" \n\r");
-	if (last == string.length() - 1) { //no whitespaces were found after text
+	if (last == str.length() - 1) { //no whitespaces were found after text
 		return;
 	}
 	str = str.substr(0, last); // modify in place because str is a reference

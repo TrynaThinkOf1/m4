@@ -47,7 +47,7 @@ static string operator * (string a, unsigned int b) {
 	}
 	return output;
 }
-static stirng operator * (unsigned int b, string a) { // same operator but for reversed param order
+static string operator * (unsigned int b, string a) { // same operator but for reversed param order
 	return a * b; // use the previously defined operator but use correct param order
 }
 
