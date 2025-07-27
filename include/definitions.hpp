@@ -1,8 +1,8 @@
-#ifndef VARS_HPP
-#define VARS_HPP
+#ifndef DEFINITIONS_HPP
+#define DEFINITIONS_HPP
 
 
-/* <======== DEFINITIONS ========> */
+/* <== DEFINITIONS ==> */
 
 	/* numbers */
 #define PI 3.1415926535897932384626433832795
@@ -12,7 +12,6 @@
 
 #define DEG_TO_RAD 0.017453292519943295769236907684886
 #define RAD_TO_DEG 57.295779513082320876798154814105
-
 
 	/* functions */
 #define CONSTRAIN(num, high, low) ( (num) > (high) ? (high) : (num) < (low) ? (low) : (num) )
@@ -26,5 +25,7 @@
 #define MAX(a, b) ( (a) > (b) ? (a) : (b) )
 #define SQ(x) ( (x) * (x) )
 
+/* <= => */
 
-#endif /* VARS_HPP */
+
+#endif /* DEFINITIONS_HPP */
