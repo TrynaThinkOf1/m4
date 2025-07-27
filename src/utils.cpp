@@ -1,9 +1,9 @@
-#include "utils.hpp" // this is the source file that goes with that header
+#include "utils.hpp" // header file located at m4/include/utils.hpp
 
 /* STL includes */
 #include <string>
 
-using namespace std;
+using std::string;
 
 
 /* <======== STRING UTILITIES ========> */

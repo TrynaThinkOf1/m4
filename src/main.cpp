@@ -8,7 +8,7 @@ FOR COPYRIGHT INFO REFER TO "LICENSE" FILE IN "m4" TOP-LEVEL DIR
 */
 
 #include <iostream>
-using namespace std;
+using std::cout, std::endl;
 
 //int main(int argc, char** argv) {
 int main() {

@@ -1,4 +1,4 @@
-#include "files.hpp" // header file located at m4/include/headers/files.hpp
+#include "files.hpp" // header file located at m4/include/files.hpp
 
 /* STL includes */
 #include <string>
@@ -9,10 +9,7 @@
 #include "zlc/zlibcomplete.hpp"
 namespace z = zlibcomplete;
 
-using namespace std;
-
-/* DEFINITIONS */
-#define CHUNK 16384
+using std::string, std::stringstream, std::fstream;
 
 
 /* <======== READING FUNCS ========> */

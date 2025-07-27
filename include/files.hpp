@@ -6,11 +6,7 @@
 #include <sstream>
 #include <fstream>
 
-/* LOCAL includes */
-#include "zlc/zlibcomplete.hpp"
-namespace z = zlibcomplete;
-
-using namespace std;
+using std::string;
 
 /* <== FILE FUNCTIONS ==> */
 

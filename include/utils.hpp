@@ -4,7 +4,7 @@
 /* STL includes */
 #include <string>
 
-using namespace std;
+using std::string;
 
 /* <== STRING UTILITIES ==> */
 
